@@ -1,0 +1,40 @@
+<%- | String  $ldap_base,
+      String  $ldap_host,
+      String  $ldap_admin_dn,
+      String  $ldap_admin_pass,
+| -%><?xml version="1.0"?>
+<conf>
+
+  <!-- Services **************************************************************
+    Old services that are not based on simpleService needs to be listed here
+   -->
+  <serverservice>
+    <tab class="serviceDHCP"        />
+    <tab class="serviceDNS"         />
+  </serverservice>
+
+  <!-- Main section **********************************************************
+       The main section defines global settings, which might be overridden by
+       each location definition inside.
+
+       For more information about the configuration parameters, take a look at
+       the FusionDirectory.conf(5) manual page.
+  -->
+  <main default="default"
+        logging="TRUE"
+        displayErrors="FALSE"
+        forceSSL="FALSE"
+        templateCompileDirectory="/var/spool/fusiondirectory/"
+        debugLevel="0"
+    >
+
+    <!-- Location definition -->
+    <location name="default"
+        config="ou=fusiondirectory,ou=configs,ou=systems,<%= $ldap_base %>">
+
+        <referral URI="<%= $ldap_host %>/<%= $ldap_base %>"
+                        adminDn="<%= $ldap_admin_dn %>"
+                        adminPassword="<%= $ldap_admin_pass %>" />
+    </location>
+  </main>
+</conf>

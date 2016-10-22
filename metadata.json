@@ -1,0 +1,20 @@
+{
+  "name": "thexa4-fusiondirectory",
+  "version": "0.1.0",
+  "author": "thexa4",
+  "summary": "Configures fusiondirectory to work with ldap",
+  "license": "MIT",
+  "source": "https://github.com/thexa4/puppet-fusiondirectory",
+  "project_page": "https://github.com/thexa4/puppet-fusiondirectory",
+  "issues_url": "https://github.com/thexa4/puppet-fusiondirectory/issues",
+  "dependencies": [
+  ],
+  "data_provider": null,
+  "operatingsystem_support": [
+    {
+      "operatingsystem":"Debian",
+      "operatingsystemrelease":[ "8" ]
+    }
+  ]
+}
+
