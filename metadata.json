@@ -1,6 +1,6 @@
 {
   "name": "thexa4-fusiondirectory",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "thexa4",
   "summary": "Configures fusiondirectory to work with ldap",
   "license": "MIT",
